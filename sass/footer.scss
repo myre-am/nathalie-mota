@@ -1,0 +1,21 @@
+/** Footer **/
+
+#menu-menu-footer {
+    gap: 20px;
+  }
+  
+  .menu-menu-footer-container ul {
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
+    list-style: none;
+  }
+  
+  .menu-menu-footer-container a {
+    font-size: 16px;
+    text-transform: uppercase;
+    text-decoration: none;
+    color: black;
+    font-weight: bolder;
+  }
+  

@@ -24,7 +24,8 @@
             wp_nav_menu(array(
             'theme_location' => 'menu-principal', 
             'menu_class' => 'menu-principal'));
-        ?>        
+        ?>
+         
     </nav>
 
 </header>

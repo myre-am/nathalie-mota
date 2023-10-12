@@ -1,97 +1,121 @@
-/** GOOGLE FONTS **/
 @font-face {
-    font-family: 'Poppins';
-    src: url('../fonts/Poppins-Regular.woff2') format('woff2');
-    font-weight: 300;
-}
-
-@font-face {
-    font-family: 'Space-Mono';
-    src: url('../fonts/SpaceMono-Regular.woff2') format('woff2');
-    font-weight:400;
+  font-family: "Poppins";
+  src: url("../fonts/Poppins-Regular.woff2") format("woff2");
+  font-weight: 300;
 }
 @font-face {
-    font-family: 'Space-Mono';
-    src: url('../fonts/SpaceMono-Italic.woff2') format('woff2');
-    font-weight: 400;
-    font-style: italic;
+  font-family: "Space-Mono";
+  src: url("../fonts/SpaceMono-Regular.woff2") format("woff2");
+  font-weight: 400;
 }
 @font-face {
-    font-family: 'Space-Mono';
-    src: url('../fonts/SpaceMono-Italic.woff2') format('woff2');
-    font-weight: 700;
-    font-style: italic;
+  font-family: "Space-Mono";
+  src: url("../fonts/SpaceMono-Italic.woff2") format("woff2");
+  font-weight: 400;
+  font-style: italic;
 }
-
+@font-face {
+  font-family: "Space-Mono";
+  src: url("../fonts/SpaceMono-Italic.woff2") format("woff2");
+  font-weight: 700;
+  font-style: italic;
+}
 body, h1, h2, h3, li, p {
-    font-family: 'Space-Mono', sans-serif;
-
+  font-family: "Space-Mono", sans-serif;
 }
 
 body {
-    max-width: 1440px;
-    margin: 0 auto;
-  }
+  max-width: 1440px;
+  margin: 0 auto;
+}
 
 a:visited {
-    color: black;
+  color: black;
 }
-
-
-
-/** HEADER **/
 
 header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+header .logo {
+  width: 215px;
+  height: 15px;
+}
+header .menu-item {
+  float: right;
+}
+header ul {
+  display: flex;
+  list-style: none;
+  flex-direction: row;
+}
+header #menu-menu-principal {
+  gap: 17px;
+}
+header .menu-menu-principal-container a {
+  font-size: 16px;
+  text-transform: uppercase;
+  text-decoration: none;
+  font-weight: bold;
 }
 
-.logo {
-    width: 215px;
-    height: 15px;
-}
-
-.menu-item {
-    float: right;
-}
-
-ul {
-    display: flex;
-    list-style: none;
-    flex-direction: row;
-    
-}
-
-
-#menu-menu-principal {
-    gap: 17px;
-}
-.menu-menu-principal-container a {
-    font-size: 16px;
-    text-transform: uppercase;
-    text-decoration: none;
-    font-weight: bold;
-}
-
-/** FOOTER **/
-
+/** Footer **/
 #menu-menu-footer {
-    gap: 20px;
+  gap: 20px;
 }
-.menu-menu-footer-container {
-    display: flex;
-    justify-content: center;
-    
 
+.menu-menu-footer-container ul {
+  display: flex;
+  justify-content: center;
+  flex-direction: row;
+  list-style: none;
 }
 
 .menu-menu-footer-container a {
-    font-size: 16px;
-    text-transform: uppercase;
-    text-decoration: none;
-    color: black;
-    font-weight: bolder;
-
-
+  font-size: 16px;
+  text-transform: uppercase;
+  text-decoration: none;
+  color: black;
+  font-weight: bolder;
 }
+
+/* The Modal (background) */
+.modal {
+  display: none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgb(0, 0, 0); /* Fallback color */
+  background-color: rgba(0, 0, 0, 0.4); /* Black w/ opacity */
+}
+
+/* Modal Content/Box */
+.modal-content {
+  background-color: #fefefe;
+  margin: 15% auto; /* 15% from the top and centered */
+  padding: 20px;
+  border: 1px solid #888;
+  width: 80%; /* Could be more or less, depending on screen size */
+}
+
+/* The Close Button */
+.close {
+  color: #aaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+  color: black;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+/*# sourceMappingURL=style.css.map */

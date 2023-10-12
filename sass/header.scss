@@ -1,0 +1,33 @@
+// Header
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  
+    .logo {
+      width: 215px;
+      height: 15px;
+    }
+  
+    .menu-item {
+      float: right;
+    }
+  
+    ul {
+      display: flex;
+      list-style: none;
+      flex-direction: row;
+    }
+  
+    #menu-menu-principal {
+      gap: 17px;
+    }
+  
+    .menu-menu-principal-container a {
+      font-size: 16px;
+      text-transform: uppercase;
+      text-decoration: none;
+      font-weight: bold;
+    }
+  }
+  
