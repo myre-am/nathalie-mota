@@ -7,11 +7,11 @@ function enqueue_styles_and_scripts() {
 add_action('wp_enqueue_scripts', 'enqueue_styles_and_scripts');
 
 // Menus
-function register_custom_menus() {
+function register_my_menus() {
     register_nav_menu('menu-principal', 'Menu Principal'); 
     register_nav_menu('menu-footer', 'Menu Footer'); 
 }
-add_action('after_setup_theme', 'register_custom_menus');
+add_action('after_setup_theme', 'register_my_menus');
 
 // Personnalisation du logo
 function theme_customizer_logo($wp_customize) {
