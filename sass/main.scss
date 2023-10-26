@@ -1,33 +1,33 @@
-// Google Fonts
+// Google Fonts Police
 @font-face {
   font-family: 'Poppins';
-  src: url('../fonts/Poppins-Regular.woff2') format('woff2');
+  src: url('../assets/fonts/Poppins-Regular.woff2') format('woff2');
   font-weight: 300;
 }
 
 @font-face {
-  font-family: 'Space-Mono';
-  src: url('../fonts/SpaceMono-Regular.woff2') format('woff2');
+  font-family: 'Space Mono';
+  src: url('../assets/fonts/SpaceMono-Regular.woff2') format('woff2');
   font-weight: 400;
 }
 
 @font-face {
-  font-family: 'Space-Mono';
-  src: url('../fonts/SpaceMono-Italic.woff2') format('woff2');
+  font-family: 'Space Mono';
+  src: url('../assets/fonts/SpaceMono-Italic.woff2') format('woff2');
   font-weight: 400;
   font-style: italic;
 }
 
 @font-face {
-  font-family: 'Space-Mono';
-  src: url('../fonts/SpaceMono-Italic.woff2') format('woff2');
+  font-family: 'Space Mono';
+  src: url('../assets/fonts/SpaceMono-Italic.woff2') format('woff2');
   font-weight: 700;
   font-style: italic;
 }
 
 // Body and Typography
 body, h1, h2, h3, li, p {
-  font-family: 'Space-Mono', sans-serif;
+  font-family: 'Space Mono', sans-serif;
 }
 
 body {

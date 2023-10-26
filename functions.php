@@ -1,7 +1,8 @@
 <?php
 
+// Chargement du style du thème & script
 function enqueue_styles_and_scripts() {
-    wp_enqueue_style('theme-style', get_template_directory_uri() . '/assets/css/style.css', array(), filemtime(get_stylesheet_directory() . '/assets/css/style.css'));
+    wp_enqueue_style('theme-style', get_template_directory_uri() . '/css/style.css', array(), filemtime(get_stylesheet_directory() . '/css/style.css'));
     wp_enqueue_script('custom-script', get_template_directory_uri() . '/assets/js/script.js', array(), filemtime(get_stylesheet_directory().'/assets/js/script.js'), true);
 }
 add_action('wp_enqueue_scripts', 'enqueue_styles_and_scripts');

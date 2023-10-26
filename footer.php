@@ -1,6 +1,6 @@
 <footer>
     
-    <?php get_template_part( 'template-parts/modal-contact' ); ?>
+    <?php get_template_part( 'template_parts/modal-contact' ); ?>
         <?php
         wp_nav_menu(array(
             'theme_location' => 'menu-footer', 
