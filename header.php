@@ -12,11 +12,13 @@
 <body>
 <header class="header">
     <div>
-        <?php if (get_theme_mod('logo')) : ?>
+        <a href="<?php echo home_url(); ?>">
+            <?php if (get_theme_mod('logo')) : ?>
             <img src="<?php echo esc_url(get_theme_mod('logo')); ?>" alt="Logo du site">
-        <?php else : ?>
-        <img class="logo" src="<?php echo get_template_directory_uri() . '/assets/images/logo.png'; ?>" alt="Logo de Nathalie Moto">
-        <?php endif; ?>
+            <?php else : ?>
+            <img class="logo" src="<?php echo get_template_directory_uri() . '/assets/images/logo.png'; ?>" alt="Logo de Nathalie Moto">
+            <?php endif; ?>
+        </a>
         
     </div>
     <nav>

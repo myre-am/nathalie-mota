@@ -1,38 +1,78 @@
 
-// Get the modal
 const modal = document.getElementById('myModal');
-
-// Get the button that opens the modal
-const openModal = document.getElementsByClassName("open-modale")[0];
-console.log(openModal);
-
-// Get the <span> element that closes the modal
 const span = document.getElementById("close");
-
 const modalContent = document.getElementsByClassName("modal-content")[0];
+const refPhoto = document.getElementById("reference-photo");
 
-// When the user clicks on the button, open the modal
-openModal.addEventListener("click", function() {
+// Fonction pour ouvrir la modale avec ou sans référence
+function openModalWithRef(reference) {
+    if (reference && refPhoto) {
+        refPhoto.value = reference;
+    } else if (refPhoto) {
+        refPhoto.value = "";
+    }
     modal.style.display = "block";
-    console.log("OK");
+}
+
+document.addEventListener("click", function(event) {
+    let targetElement = event.target;
+
+    if (targetElement.closest('.open-modale')) {
+        const reference = targetElement.closest('.open-modale').getAttribute('data-reference');
+        openModalWithRef(reference);
+    }
 });
 
-// When the user clicks on <span> (x), close the modal
 span.addEventListener("click", function() {
     modal.style.display = "none";
-    console.log(span)
 });
 
 modal.addEventListener("click", function() {
     modal.style.display = "none";
-    console.log(modal)
 });
 
 modalContent.addEventListener("click", function(e) {
     e.stopPropagation();
+});
 
 
-})
+// Affichage de la miniature 
+document.querySelectorAll('.thumbnail-nav').forEach(function(nav) {
+    nav.addEventListener('mouseenter', function() {
+      this.querySelector('.miniature').style.display = 'block';
+    });
+    nav.addEventListener('mouseleave', function() {
+      this.querySelector('.miniature').style.display = 'none';
+    });
+  });
+  
+
+  // Le bouton 'Charger plus' 
+
+  jQuery(document).ready(function($) {
+    var paged = 1;
+
+    $('#load-more').on('click', function() {
+        paged++;
+
+        $.ajax({
+            type: 'POST',
+            url: '/nathalie-mota/wp-admin/admin-ajax.php',
+            dataType: 'json',
+            data: {
+                action: 'load_more_photos',
+                paged: paged,
+            },
+            success: function(res) {
+                if (paged >= res.max) {
+                    $('#load-more').hide();
+                }
+                $('.photos-grid').append(res.html);
+            }
+        });
+    });
+});
+
     
 
 

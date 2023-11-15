@@ -1,4 +1,4 @@
-<!-- The Modal -->
+<!-- Modale de contact -->
 
 <div id="myModal" class="modal">
   <div class="modal-content">

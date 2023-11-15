@@ -1,10 +1,144 @@
 
-//Single PHOTO //
+// Photo details
 
 .photo-details {
     display: flex;
     flex-direction: row;
+    text-transform: uppercase;
+    
+    align-items: end;
+    .photo-content {
+        width: 50%;
+        padding-bottom: 18px;
+        border-bottom: 1px solid black;
+        
+        h1 {
+            font-size: 62px;
+            font-style: italic;
+            display: flex;
+        
+        }
+        display: flex;
+        flex-direction: column;
+        
+    }
+    .photo-image {
+        width: 50%;
+        padding-left: 73px;
+    }
 }
-.photo-title {
-    color: pink;
+
+// Bouton Contact & Miniature
+.infos-photos {
+    display: flex;
+    
+    justify-content: space-between;
+    
+    .photo-contact {
+        width: 50%;
+        display: flex;
+        justify-content:flex-start;
+        gap: 154px;
+        margin-top: 35px;
+        margin-bottom: 35px;
+        .open-modale {
+            border: 2px;
+            padding: 8px 130px;
+        }
+        p {
+            font-family: 'Poppins', sans-serif;
+            font-size: 16px;
+        }
+    }
+    .photo-navigation {
+      position: relative; 
+      display: flex;
+      justify-content: space-between;
+      gap: 15px;
+    
+      .thumbnail-nav {
+        position: relative; 
+        display: flex;
+        align-items: center; 
+       
+    
+        .miniature1, .miniature2 {
+          position: absolute;
+          top: 0; 
+          left: 70%; 
+          transform: translateX(-50%); 
+          display: none; 
+          z-index: 1; 
+          
+        }
+    
+        &:hover {
+          .miniature1, .miniature2 {
+            display: block;
+          }
+        }
+    
+        .nav-arrow {
+          z-index: 2;
+          
+        }
+      }
+    
+      .prev-photo {
+        &:hover {
+          .miniature1 {
+            display: block; 
+          }
+        }
+      }
+    
+      .next-photo {
+        &:hover {
+          .miniature2 {
+            display: block; 
+          }
+        }
+      }
+    }
+  }
+    
+
+
+
+// Photo apparentés 
+.related-photos-title {
+    border-top: 1px solid black;
+    padding-top: 35px;
+    padding-bottom: 35px ;
 }
+
+.related-photos {
+    display: flex;
+    width: 100%;
+    gap: 10px;
+   
+}
+
+
+// Bouton 'Toutes les photos' 
+.all-photos {
+    display: flex;
+    justify-content: center;
+    margin-top: 35px;
+    margin-bottom: 35px;
+    
+    .btn-all-photos {
+        border: 2px;
+        padding: 8px 130px;
+        a {
+            text-decoration: none;
+        }
+        
+    }
+    
+
+}
+
+
+
+
