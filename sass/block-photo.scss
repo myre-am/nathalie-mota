@@ -1,72 +1,68 @@
 .bloc-photo {
     width: 100%;
     height: 495px;
+    position: relative; 
 
-    .img-container img  {
+    .img-container img {
         width: 100%;
         height: 495px;
         object-fit: cover;
     }
 
-    
-    
-    
-    a {
-        display: block;
-        position: relative; 
-        .photo-overlay {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 495px;
-            background: rgba(0, 0, 0, 0.5); 
-            z-index: 2; 
-            opacity: 0; 
-            transition: opacity 0.3s ease; 
-            text-transform: uppercase; 
-            .eye-icon {
-                position:absolute;
-                top: 50%;
-                left: 50%;
-                transform: translate(-50%, -50%);
-                width: 40px;
-                height: auto;
-                opacity: 0;
-                transition: opacity 0.3s ease;
-            }
-            .photo-ref, .photo-cat {
-                position: absolute;
-                bottom: 10px;
-                color: white;
-                font-size: 15px;
-            }
-            .photo-ref {
-                left: 10px;
-            }
-            .photo-cat {
-                right: 10px;
-            }
-            .window-icon {
-                position: absolute;
-                top: 10px;
-                right: 10px;
-                width: 35px;
-                height: auto;
-                cursor: pointer;
-            }
-             
-        }
+    .photo-overlay {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 495px;
+        background: rgba(0, 0, 0, 0.5);
+        z-index: 2;
+        opacity: 0;
+        transition: opacity 0.3s ease;
+        text-transform: uppercase;
 
-        &:hover {
-            .photo-overlay {
-                opacity: 1; 
-                .eye-icon {
-                    opacity: 1;
-                }
-            }
+        .photo-ref, .photo-cat {
+            position: absolute;
+            bottom: 10px;
+            color: white;
+            font-size: 15px;
+        }
+        .photo-ref {
+            left: 10px;
+        }
+        .photo-cat {
+            right: 10px;
+        }
+        .window-icon {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            width: 35px;
+            height: auto;
+            cursor: pointer;
+        }
+    }
+
+    // Icone de l'oeil 
+    .eye-icon {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 40px;
+        height: auto;
+        opacity: 0;
+        transition: opacity 0.3s ease;
+        z-index: 3;
+    }
+
+    &:hover {
+        .photo-overlay {
+            opacity: 1; 
+        }
+        .eye-icon {
+            opacity: 1; 
         }
     }
 }
-
 

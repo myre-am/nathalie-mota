@@ -32,6 +32,10 @@ body button {
   cursor: pointer;
 }
 
+h1 {
+  display: none;
+}
+
 footer {
   border-top: 1px solid black;
 }
@@ -64,7 +68,7 @@ a:visited {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   gap: 20px;
-  padding: 90px 90px 20px 90px;
+  padding: 35px 90px 20px 90px;
 }
 .photo-catalogue .load-photos {
   display: flex;
@@ -129,18 +133,17 @@ header .menu-menu-principal-container a {
   font-weight: bolder;
 }
 
-/* The Modal (background) */
 .modal {
-  display: none; /* Hidden by default */
-  position: fixed; /* Stay in place */
-  z-index: 1; /* Sit on top */
+  display: none;
+  position: fixed;
+  z-index: 1;
   left: 0;
   top: 0;
-  width: 100%; /* Full width */
-  height: 100%; /* Full height */
-  overflow: auto; /* Enable scroll if needed */
-  background-color: rgb(0, 0, 0); /* Fallback color */
-  background-color: rgba(0, 0, 0, 0.4); /* Black w/ opacity */
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgb(0, 0, 0);
+  background-color: rgba(0, 0, 0, 0.4);
 }
 .modal .modal-content {
   display: flex;
@@ -157,7 +160,6 @@ header .menu-menu-principal-container a {
   object-fit: cover;
 }
 
-/* The Close Button */
 .close {
   color: #aaa;
   float: right;
@@ -309,17 +311,14 @@ header .menu-menu-principal-container a {
 .bloc-photo {
   width: 100%;
   height: 495px;
+  position: relative;
 }
 .bloc-photo .img-container img {
   width: 100%;
   height: 495px;
   object-fit: cover;
 }
-.bloc-photo a {
-  display: block;
-  position: relative;
-}
-.bloc-photo a .photo-overlay {
+.bloc-photo .photo-overlay {
   position: absolute;
   top: 0;
   left: 0;
@@ -331,7 +330,27 @@ header .menu-menu-principal-container a {
   transition: opacity 0.3s ease;
   text-transform: uppercase;
 }
-.bloc-photo a .photo-overlay .eye-icon {
+.bloc-photo .photo-overlay .photo-ref, .bloc-photo .photo-overlay .photo-cat {
+  position: absolute;
+  bottom: 10px;
+  color: white;
+  font-size: 15px;
+}
+.bloc-photo .photo-overlay .photo-ref {
+  left: 10px;
+}
+.bloc-photo .photo-overlay .photo-cat {
+  right: 10px;
+}
+.bloc-photo .photo-overlay .window-icon {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  width: 35px;
+  height: auto;
+  cursor: pointer;
+}
+.bloc-photo .eye-icon {
   position: absolute;
   top: 50%;
   left: 50%;
@@ -340,32 +359,151 @@ header .menu-menu-principal-container a {
   height: auto;
   opacity: 0;
   transition: opacity 0.3s ease;
+  z-index: 3;
 }
-.bloc-photo a .photo-overlay .photo-ref, .bloc-photo a .photo-overlay .photo-cat {
+.bloc-photo:hover .photo-overlay {
+  opacity: 1;
+}
+.bloc-photo:hover .eye-icon {
+  opacity: 1;
+}
+
+#lightbox-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.8);
+  z-index: 1000;
+  display: none;
+  align-items: center;
+  justify-content: center;
+}
+#lightbox-container .lightbox-content {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin: auto;
+  padding: 20px;
+  max-width: 700px;
+}
+#lightbox-container .lightbox-content .lightbox-image {
+  max-width: 300px;
+  max-height: 300px;
+  width: auto;
+  height: auto;
+}
+#lightbox-container .lightbox-content .lightbox-info {
   position: absolute;
-  bottom: 10px;
+  bottom: -40px;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  padding: 0 20px;
   color: white;
-  font-size: 15px;
+  text-transform: uppercase;
 }
-.bloc-photo a .photo-overlay .photo-ref {
-  left: 10px;
+#lightbox-container .lightbox-content .lightbox-info #lightbox-ref, #lightbox-container .lightbox-content .lightbox-info #lightbox-cat {
+  margin: 0 10px;
 }
-.bloc-photo a .photo-overlay .photo-cat {
-  right: 10px;
-}
-.bloc-photo a .photo-overlay .window-icon {
+#lightbox-container .lightbox-content .close-lightbox {
   position: absolute;
   top: 10px;
-  right: 10px;
-  width: 35px;
-  height: auto;
+  right: 25px;
+  color: white;
+  font-size: 35px;
+  font-weight: bold;
   cursor: pointer;
 }
-.bloc-photo a:hover .photo-overlay {
-  opacity: 1;
+#lightbox-container .lightbox-content .lightbox-nav {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  cursor: pointer;
+  z-index: 1010;
 }
-.bloc-photo a:hover .photo-overlay .eye-icon {
-  opacity: 1;
+#lightbox-container .lightbox-content .lightbox-nav.prev-arrow {
+  left: 10px;
+}
+#lightbox-container .lightbox-content .lightbox-nav.next-arrow {
+  right: 10px;
+}
+#lightbox-container .lightbox-content .lightbox-nav img {
+  width: 30px;
+  height: auto;
+}
+
+.filters-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 90px;
+  margin-top: 55px;
+}
+.filters-container .filters-group {
+  display: flex;
+}
+.filters-container .filters-group > div {
+  margin-right: 10px;
+}
+.filters-container .filters-group:last-child {
+  margin-right: 0;
+}
+.filters-container .filter-sort {
+  margin-left: auto;
+}
+.filters-container .filter-category, .filters-container .filter-format, .filters-container .filter-sort {
+  position: relative;
+}
+.filters-container .filter-category input, .filters-container .filter-format input, .filters-container .filter-sort input {
+  padding: 10px;
+  border: 2px solid #B8BBC2;
+  border-radius: 5px;
+  cursor: pointer;
+  text-transform: uppercase;
+  font-family: "Poppins", sans-serif;
+  font-weight: bold;
+  font-size: 12px;
+  position: relative;
+  background: none;
+}
+.filters-container .filter-category input::after, .filters-container .filter-format input::after, .filters-container .filter-sort input::after {
+  content: "";
+  position: absolute;
+  right: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+  border-left: 5px solid transparent;
+  border-right: 5px solid transparent;
+  border-top: 5px solid black;
+  transition: transform 0.3s ease;
+}
+.filters-container .filter-category input:focus::after, .filters-container .filter-format input:focus::after, .filters-container .filter-sort input:focus::after {
+  transform: translateY(-50%) rotate(180deg);
+}
+.filters-container .filter-category .filter-list, .filters-container .filter-format .filter-list, .filters-container .filter-sort .filter-list {
+  position: absolute;
+  width: 100%;
+  background: white;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  z-index: 10;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: none;
+  border-radius: 5px;
+}
+.filters-container .filter-category .filter-list li, .filters-container .filter-format .filter-list li, .filters-container .filter-sort .filter-list li {
+  padding: 10px;
+  border-bottom: 1px solid #eee;
+  color: black;
+  font-family: "Poppins", sans-serif;
+}
+.filters-container .filter-category .filter-list li:hover, .filters-container .filter-format .filter-list li:hover, .filters-container .filter-sort .filter-list li:hover {
+  background-color: #E00000;
 }
 
 /*# sourceMappingURL=style.css.map */

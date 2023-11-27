@@ -1,0 +1,86 @@
+// Conteneur des filtres
+.filters-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 90px;
+    margin-top: 55px;
+
+    // Les filtres Catégorie et Format
+    .filters-group {
+        display: flex;
+
+        & > div {
+            margin-right: 10px; 
+        }
+
+        &:last-child {
+            margin-right: 0; 
+        }
+    }
+
+    // Le filtre Trier par
+    .filter-sort {
+        margin-left: auto; 
+    }
+
+    // Style commun des filtres
+    .filter-category, .filter-format, .filter-sort {
+        position: relative;
+
+        input {
+            padding: 10px;
+            border: 2px solid #B8BBC2;
+            border-radius: 5px;
+            cursor: pointer;
+            text-transform: uppercase;
+            font-family: 'Poppins', sans-serif;
+            font-weight: bold;
+            font-size: 12px;
+            position: relative;
+            background: none;
+
+            // Ajout d'une flèche avec un pseudo-élément
+            &::after {
+                content: '';
+                position: absolute;
+                right: 10px;
+                top: 50%;
+                transform: translateY(-50%);
+                border-left: 5px solid transparent;
+                border-right: 5px solid transparent;
+                border-top: 5px solid black; // Flèche pointant vers le bas
+                transition: transform 0.3s ease; // Animation de rotation optionnelle
+            }
+
+            // Rotation de la flèche quand l'input est actif
+            &:focus::after {
+                transform: translateY(-50%) rotate(180deg);
+            }
+        }
+
+        .filter-list {
+            position: absolute;
+            width: 100%;
+            background: white;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            z-index: 10;
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            display: none; 
+            border-radius: 5px;
+
+            li {
+                padding: 10px;
+                border-bottom: 1px solid #eee;
+                color: black;
+                font-family: 'Poppins', sans-serif;
+
+                &:hover {
+                    background-color: #E00000;
+                }
+            }
+        }
+    }
+}

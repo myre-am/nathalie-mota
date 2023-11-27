@@ -72,9 +72,3 @@ document.querySelectorAll('.thumbnail-nav').forEach(function(nav) {
         });
     });
 });
-
-    
-
-
-
-
