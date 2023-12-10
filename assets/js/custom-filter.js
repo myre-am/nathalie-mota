@@ -1,17 +1,22 @@
+// Les filtres
+
 jQuery(document).ready(function($) {
     // Gestion du clic sur les filtres
-    $('#category-input, #format-input, #sort-input').on('click', function() {
-        $(this).next('.filter-list').toggle();
+    $('.filter-category, .filter-format, .filter-sort').on('click', function() {
+        $(this).toggleClass('active'); // Bascule la classe 'active'
+        $(this).find('.filter-list').toggle(); // Affiche/cache la liste
     });
 
     // Gestion de la sélection des filtres
     $('.filter-list li').on('click', function() {
         var filterType = $(this).closest('.filter-list').attr('id').split('-')[0]; // category, format, sort
         var selectedValue = $(this).data(filterType);
-        $('#' + filterType + '-input').val($(this).text()).data(filterType, selectedValue);
-        $(this).parent().hide();
-        sendAjaxRequest();
+        $(this).closest('.filter-category, .filter-format, .filter-sort').find('input').val($(this).text()).data(filterType, selectedValue);
+        $('.filter-list').hide();
+        $('.filter-category, .filter-format, .filter-sort').removeClass('active'); // Retire la classe 'active' des filtres
     });
+
+
 
     function sendAjaxRequest() {
         var selectedCategory = $('#category-input').data('category') || 'all';

@@ -1,3 +1,5 @@
+//Bloc-Photo & Overlay 
+
 .bloc-photo {
     width: 100%;
     height: 495px;
@@ -33,7 +35,7 @@
         .photo-cat {
             right: 10px;
         }
-        .window-icon {
+        .lightbox-icon {
             position: absolute;
             top: 10px;
             right: 10px;
@@ -62,6 +64,33 @@
         }
         .eye-icon {
             opacity: 1; 
+        }
+    }
+
+    // Responsive
+    @media (max-width: 768px) {
+        width: 100%;
+        height: auto;
+       .img-container img  {
+        width: 100%;
+        object-fit: cover;
+        .photo-overlay {
+            
+            width: 100%;
+        }
+        
+       }
+    }
+
+    @media (max-width: 320px) {
+        width: 100%;
+        height: auto;
+        .img-container img {
+            width: 100%;
+            height: 230px;
+        }
+        .photo-overlay {
+            height: 230px;
         }
     }
 }

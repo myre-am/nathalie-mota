@@ -37,6 +37,7 @@ $choices_format = $field_format ? $field_format['choices'] : [];
             <!-- Filtre des catégories -->
             <div class="filter-category">
                 <input type="text" id="category-input" placeholder="Catégorie" readonly>
+                <img src="<?php echo get_template_directory_uri() . '/assets/images/arrow_filter.png'; ?>" class="filter-arrow">
                 <ul id="category-list" class="filter-list" style="display: none;">
                     <?php foreach ($choices_categorie as $value => $label) : ?>
                         <li data-category="<?php echo esc_attr($value); ?>"><?php echo esc_html($label); ?></li>
@@ -47,6 +48,7 @@ $choices_format = $field_format ? $field_format['choices'] : [];
             <!-- Filtre des formats -->
             <div class="filter-format">
                 <input type="text" id="format-input" placeholder="Format" readonly>
+                <img src="<?php echo get_template_directory_uri() . '/assets/images/arrow_filter.png'; ?>" class="filter-arrow">
                 <ul id="format-list" class="filter-list" style="display: none;">
                     <?php foreach ($choices_format as $value => $label) : ?>
                         <li data-format="<?php echo esc_attr($value); ?>"><?php echo esc_html($label); ?></li>
@@ -58,6 +60,7 @@ $choices_format = $field_format ? $field_format['choices'] : [];
        <!-- Conteneur pour le filtre Trier par -->
        <div class="filter-sort">
             <input type="text" id="sort-input" placeholder="Trier par" readonly>
+            <img src="<?php echo get_template_directory_uri() . '/assets/images/arrow_filter.png'; ?>" class="filter-arrow">
             <ul id="sort-list" class="filter-list" style="display: none;">
                 <li data-sort="DESC">Du plus récent au plus ancien</li>
                 <li data-sort="ASC">Du plus ancien au plus récent</li>
@@ -65,7 +68,7 @@ $choices_format = $field_format ? $field_format['choices'] : [];
         </div>
     </section>
 
-
+    <!-- Catalogue photos -->
     <section class="photo-catalogue">
         <div class="photos-grid">
             <?php
@@ -82,6 +85,7 @@ $choices_format = $field_format ? $field_format['choices'] : [];
             endwhile; wp_reset_postdata(); endif;
             ?>
         </div>
+        <!-- Bouton charger plus -->
         <div class="load-photos">
             <button id="load-more" class="btn-load-more">Charger plus</button>
         </div>

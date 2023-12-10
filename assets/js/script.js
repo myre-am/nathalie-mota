@@ -1,3 +1,4 @@
+// Modale
 
 const modal = document.getElementById('myModal');
 const span = document.getElementById("close");
@@ -36,15 +37,22 @@ modalContent.addEventListener("click", function(e) {
 });
 
 
-// Affichage de la miniature 
-document.querySelectorAll('.thumbnail-nav').forEach(function(nav) {
-    nav.addEventListener('mouseenter', function() {
-      this.querySelector('.miniature').style.display = 'block';
+// Miniatures 
+document.querySelectorAll('.thumbnail-nav').forEach(nav => {
+    nav.addEventListener('mouseenter', () => {
+        // Affiche la miniature correspondante
+        nav.querySelectorAll('.miniature1, .miniature2').forEach(miniature => {
+            miniature.style.display = 'block';
+        });
     });
-    nav.addEventListener('mouseleave', function() {
-      this.querySelector('.miniature').style.display = 'none';
+    nav.addEventListener('mouseleave', () => {
+        // Cache la miniature correspondante
+        nav.querySelectorAll('.miniature1, .miniature2').forEach(miniature => {
+            miniature.style.display = 'none';
+        });
     });
-  });
+});
+
   
 
   // Le bouton 'Charger plus' 
@@ -72,3 +80,30 @@ document.querySelectorAll('.thumbnail-nav').forEach(function(nav) {
         });
     });
 });
+
+// Menu Burger
+
+document.addEventListener('DOMContentLoaded', function() {
+    const burgerButton = document.querySelector('.burger-menu-button');
+    const navigation = document.querySelector('header nav');
+    const body = document.body;
+
+    burgerButton.addEventListener('click', function() {
+        // Bascule les classes pour ouvrir/fermer le menu
+        this.classList.toggle('open-nav');
+        navigation.classList.toggle('open');
+
+        // Vérifie si le menu est ouvert
+        if (navigation.classList.contains('open')) {
+            // Bloque le défilement de la page
+            body.style.overflow = 'hidden';
+            document.documentElement.style.overflow = 'hidden';
+        } else {
+            // Réactive le défilement de la page
+            body.style.overflow = '';
+            document.documentElement.style.overflow = '';
+        }
+    });
+});
+
+

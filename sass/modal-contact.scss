@@ -1,8 +1,8 @@
-// The Modal (background)
+// Modale de contact 
 .modal {
     display: none;
     position: fixed;
-    z-index: 1; 
+    z-index: 2; 
     left: 0;
     top: 0;
     width: 100%; 
@@ -11,10 +11,12 @@
     background-color: rgb(0, 0, 0); 
     background-color: rgba(0, 0, 0, 0.4); 
 
-    // Modal Content
+    // Modal content
     .modal-content {
         .header-contact {
             object-fit: cover;
+            width: 100%;
+            margin-top: 10px;
         }
         display: flex;
         justify-content: center;
@@ -25,7 +27,61 @@
         border: 5px solid black;
         width: 30%;
         height: 765px;
-    }
+
+        .wpcf7 {
+            background-color: white;
+            display: flex;
+            align-items: center;
+
+            form {
+                display: flex;
+                flex-direction: column;
+                gap: 6px;
+                margin-top: 16px;
+
+                p {
+                    input {
+                        width: 100%;
+                        height: 40px;
+                    }
+                    
+                    font-family: 'Poppins', sans-serif;
+                    margin: 10px;
+
+                    .wpcf7-form-control {
+                        border: 1px solid #B8BBC2;
+                        border-radius: 8px;
+                        width: 100%;
+                    }
+
+                    label {
+                        display: flex;
+                        flex-direction: column;
+                        gap: 10px;
+                        color: black;
+                        font-weight: bold;
+                        font-size: 12px;
+                        
+                    }
+                    .wpcf7-submit {
+                        color: black;
+                        height: auto;
+                        border: none;
+                        border-radius: 1px;
+                        background-color: #D8D8D8;
+                        padding: 15px;
+                        cursor: pointer;
+                        &:hover {
+                            background-color: black;
+                            color: white;
+                        }
+                    }
+                        
+                    
+                }
+            }
+        }
+   }
 }
 
 //The Button (close)
@@ -42,46 +98,3 @@
         cursor: pointer;
     }
 }
-
-.wpcf7 {
-    background-color: white;
-    display: flex;
-    align-items: center;
-    p {
-        font-family: 'Poppins', sans-serif;
-    }
-    form {
-        display: flex;
-        flex-direction: column;
-    }
-    input {
-        width: 100%;
-        height: 40px;
-       
-    }
-    .wpcf7-form-control {
-        border: 1px solid #B8BBC2;
-        border-radius: 8px;
-        width: 100%;
-        
-
-    }
-    label {
-        display: flex;
-        flex-direction: column;
-        gap: 10px;
-        color: black;
-        font-weight: bold;
-        font-size: 12px;
-        
-    }
-    .wpcf7-submit {
-        color: black;
-        height: 60px;
-        border: none;
-    }
-}
-
-
-
- 

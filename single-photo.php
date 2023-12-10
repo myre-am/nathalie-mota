@@ -11,8 +11,8 @@ if (have_posts()) :
 
                 <p>Référence : <?php echo get_field('reference'); ?></p>
                 <p>Type : <?php echo get_field('Type'); ?></p>
-                <p>Format : <?php echo get_field('format'); ?></p>
-                <p>Catégorie : <?php echo get_field('categorie'); ?></p>
+                <p>Format : <?php echo get_field('Format'); ?></p>
+                <p>Catégorie : <?php echo get_field('Catégorie'); ?></p>
                 <p>Année : <?php echo get_field('annee'); ?></p>
             </div>
             <div class="photo-image">
@@ -66,7 +66,7 @@ if (have_posts()) :
 
             <?php
             $current_photo_id = get_the_ID();
-            $related_cat = get_field('categorie');
+            $related_cat = get_field('Catégorie');
 
             $args = array(
                 'post_type' => 'photo',
@@ -74,7 +74,7 @@ if (have_posts()) :
                 'post__not_in' => array($current_photo_id),
                 'meta_query' => array(
                     array(
-                        'key' => 'categorie',
+                        'key' => 'Catégorie',
                         'value' => $related_cat,
                         'compare' => '='
                     )

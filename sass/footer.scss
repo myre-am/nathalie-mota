@@ -18,4 +18,29 @@
     color: black;
     font-weight: bolder;
   }
-  
+
+   //Responsive du footer 
+   
+  @media (max-width: 768px) {
+    footer {
+      .menu-menu-footer-container ul {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+      }
+    }
+  }
+
+  @media (max-width: 320px) {
+    .menu-menu-footer-container {
+      display: flex;
+      justify-content: center;
+      ul {
+        padding: 0;
+        a {
+          font-size: 13px;
+        }
+      }
+    }
+  }
+

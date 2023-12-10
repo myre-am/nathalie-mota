@@ -10,6 +10,8 @@
     </head>
     
 <body>
+    <!-- Header  -->
+    
 <header class="header">
     <div>
         <a href="<?php echo home_url(); ?>">
@@ -29,6 +31,12 @@
         ?>
          
     </nav>
+    <!-- Menu burger -->
+    <button class="burger-menu-button">
+        <span></span>
+        <span></span>
+        <span></span>
+    </button>
 
 </header>
     
