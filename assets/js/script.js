@@ -65,7 +65,7 @@ document.querySelectorAll('.thumbnail-nav').forEach(nav => {
 
         $.ajax({
             type: 'POST',
-            url: '/nathalie-mota/wp-admin/admin-ajax.php',
+            url: ajax_object.ajaxurl,
             dataType: 'json',
             data: {
                 action: 'load_more_photos',

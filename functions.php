@@ -88,7 +88,7 @@ function filters_images() {
     // Ajout des filtres de catégorie et de format
     if ($selectedCategory != 'all') {
         array_push($args['meta_query'], array(
-            'key' => 'categorie',
+            'key' => 'Catégorie',
             'value' => $selectedCategory,
             'compare' => '='
         ));
@@ -96,7 +96,7 @@ function filters_images() {
 
     if ($selectedFormat != 'all') {
         array_push($args['meta_query'], array(
-            'key' => 'format',
+            'key' => 'Format',
             'value' => $selectedFormat,
             'compare' => '='
         ));

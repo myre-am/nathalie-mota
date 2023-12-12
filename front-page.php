@@ -10,8 +10,8 @@ $random_photo_query = new WP_Query($hero_args);
 
 // Récupération des options de catégorie et de format depuis ACF
 if (function_exists('acf_get_field')) {
-    $field_categorie = acf_get_field('categorie');
-    $field_format = acf_get_field('format');
+    $field_categorie = acf_get_field('Catégorie');
+    $field_format = acf_get_field('Format');
 }
 
 $choices_categorie = $field_categorie ? $field_categorie['choices'] : [];
